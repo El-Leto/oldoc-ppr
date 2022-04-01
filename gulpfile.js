@@ -78,6 +78,7 @@ const copy = (done) => {
     "source/css/normalize.min.css",
     "source/*.ico",
     "source/img/**/*.{jpg,png,svg,gif}",
+    "source/doc/**",
     // "source/phpmailer/**",
     // "source/sendmail.php",
   ], {
@@ -124,7 +125,7 @@ const watcher = () => {
   gulp.watch("source/sass/**/*.scss", gulp.series(styles));
   gulp.watch("source/js/*.js", gulp.series(scripts));
   gulp.watch("source/*.html", gulp.series(html, reload));
-  gulp.watch("source/img/*.{jpg,png,svg,gif}", gulp.series(images));
+  gulp.watch("source/img/**/*.{jpg,png,svg,gif}", gulp.series(images));
 }
 
 // Build
