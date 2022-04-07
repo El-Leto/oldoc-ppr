@@ -1,0 +1,65 @@
+.footer {
+  background-color: $text;
+  color: $grey;
+
+  &--wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+}
+
+.footer__title {
+  font-family: $font-bold;
+}
+
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__phone {
+  text-decoration: none;
+  color: $grey;
+  font-family: $font-bold;
+  font-size: 20px;
+
+  &:hover {
+    color: $text-hover;
+  }
+
+  &:active {
+    color: $text-hover;
+  }
+
+  &:focus {
+    color: $text-hover;
+  }
+}
+
+.footer__mail {
+  text-decoration: none;
+  color: $grey;
+
+  &:hover {
+    color: $text-hover;
+  }
+
+  &:active {
+    color: $text-hover;
+  }
+
+  &:focus {
+    color: $text-hover;
+  }
+}
+
+.footer__time {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__text {
+  margin: 0;
+}

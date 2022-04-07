@@ -1,0 +1,80 @@
+.about {
+  margin-top: 40px;
+  background-color: $white;
+  box-shadow: 0px 5px 20px 1px rgba(188, 190, 191, 0.6);
+  border-radius: 15px;
+  padding: 30px 60px 60px;
+  margin-bottom: 30px;
+}
+
+.about__title {
+  font-family: $font-bold;
+}
+
+.about__title-add {
+  font-family: $font-bold;
+}
+
+.about__link {
+  text-decoration: none;
+  color: $text;
+
+  &:hover {
+    color: $text-hover;
+  }
+
+  &:active {
+    color: $text-hover;
+  }
+
+  &:focus {
+    color: $text-hover;
+  }
+}
+
+.about__list {
+  list-style: none;
+  padding: 0;
+}
+
+.about__item {
+  padding-left: 140px;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 120px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &--support {
+    &::after {
+      background-image: url('../../img/support.png');
+    }
+  }
+
+  &--resolve {
+    &::after {
+      background-image: url('../../img/resolve.png');
+    }
+  }
+
+  &--reputation {
+    &::after {
+      background-image: url('../../img/reputation.png');
+    }
+  }
+}

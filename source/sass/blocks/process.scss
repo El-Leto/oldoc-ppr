@@ -1,0 +1,74 @@
+.process__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.process__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 60px;
+  background-color: $white;
+  box-shadow: 0px 5px 20px 1px rgba(188, 190, 191, 0.6);
+  border-radius: 15px;
+  padding: 30px;
+
+  &:last-child {
+    margin-right: 0;
+
+    &::after {
+      content: '';
+      display: none;
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 60px;
+    position: absolute;
+    top: 0;
+    margin: auto;
+    bottom: 0;
+    right: -60px;
+    border-bottom: 4px dashed #000000;
+  }
+}
+
+.process__image {
+  width: 120px;
+  height: 120px;
+  background-color: $grey;
+  border-radius: 60px;
+
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &--bid {
+    background-image: url('../../img/bid.png');
+  }
+
+  &--agreement {
+    background-image: url('../../img/agreement.png');
+  }
+
+  &--project {
+    background-image: url('../../img/project.png');
+  }
+
+  &--control {
+    background-image: url('../../img/control.png');
+  }
+}
+
+.process__text {
+  text-align: center;
+  margin: 0;
+}
