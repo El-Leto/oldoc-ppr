@@ -1,15 +1,19 @@
 .container {
   margin: 0 auto;
+  width: 100%;
   max-width: 1240px;
-  min-width: 1024px;
+  padding-left: 25px;
+  padding-right: 25px;
+  box-sizing: border-box;
 
-  // @media (max-width: 1100px)
-  //   min-width: 768px;
-  //   max-width: 1100px;
-  // }
+  @media (max-width: $tablet-width) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
-  // @media (max-width: 767px) {
-  //   min-width: 320px;
-  //   max-width: 767px;
-  // }
+  @media (max-width: $mobile-width) {
+    min-width: 320px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }

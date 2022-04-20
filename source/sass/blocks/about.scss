@@ -5,10 +5,19 @@
   border-radius: 15px;
   padding: 30px 60px 60px;
   margin-bottom: 30px;
+
+  @media (max-width: $mobile-width) {
+    padding: 20px;
+    margin-top: 20px;
+  }
 }
 
 .about__title {
   font-family: $font-bold;
+
+  @media (max-width: $mobile-width) {
+    margin-top: 0;
+  }
 }
 
 .about__title-add {
@@ -44,8 +53,16 @@
   padding-bottom: 50px;
   margin-bottom: 30px;
 
+  @media (max-width: $mobile-width) {
+    margin-bottom: 60px;
+  }
+
   &:last-child {
     margin-bottom: 0;
+
+    @media (max-width: $mobile-width) {
+      margin-bottom: 60px;
+    }
   }
 
   &::after {
@@ -58,6 +75,11 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+
+    @media (max-width: $mobile-width) {
+      width: 80px;
+      height: 80px;
+    }
   }
 
   &--support {
@@ -76,5 +98,11 @@
     &::after {
       background-image: url('../../img/reputation.png');
     }
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 100px;
   }
 }

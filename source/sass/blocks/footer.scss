@@ -7,11 +7,29 @@
     justify-content: space-between;
     padding-top: 20px;
     padding-bottom: 30px;
+
+    @media (max-width: $mobile-width) {
+      padding-bottom: 20px;
+    }
   }
 }
 
 .footer__title {
   font-family: $font-bold;
+
+  @media (max-width: $tablet-width) {
+    font-size: 18px;
+  }
+
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+}
+
+.footer__address {
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
 }
 
 .footer__contacts {
@@ -24,6 +42,10 @@
   color: $grey;
   font-family: $font-bold;
   font-size: 20px;
+
+  @media (max-width: $tablet-width) {
+    font-size: 18px;
+  }
 
   &:hover {
     color: $text-hover;
@@ -58,6 +80,10 @@
 .footer__time {
   display: flex;
   flex-direction: column;
+
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
 }
 
 .footer__text {

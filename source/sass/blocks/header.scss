@@ -10,6 +10,29 @@
     align-items: center;
     padding-top: 20px;
     padding-bottom: 20px;
+
+    @media (max-width: $mobile-width) {
+      position: relative;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+.header__nav {
+  @media (max-width: $mobile-width) {
+    display: none;
+
+    &--opened {
+      position: absolute;
+      top: 61px;
+      right: 0;
+      z-index: 100;
+      background-color: $white;
+      display: block;
+      width: 270px;
+      box-shadow: 12px 20px 33px 0px rgba(34, 60, 80, 0.15);
+    }
   }
 }
 
@@ -18,6 +41,11 @@
   list-style: none;
   padding: 0;
   margin: 0;
+
+  @media (max-width: $mobile-width) {
+    flex-direction: column;
+    padding-left: 20px;
+  }
 }
 
 .header__item {
@@ -25,6 +53,15 @@
 
   &:last-child {
     margin-right: 0;
+  }
+
+  @media (max-width: $tablet-width) {
+    margin-right: 15px;
+    font-size: 14px;
+  }
+
+  @media (max-width: $mobile-width) {
+    line-height: 40px;
   }
 }
 
@@ -54,6 +91,10 @@
 .header__contacts {
   display: flex;
   flex-direction: column;
+
+  @media (max-width: $mobile-width) {
+    margin-right: 10px;
+  }
 }
 
 .header__phone {
@@ -73,6 +114,10 @@
   &:focus {
     color: $text-hover;
   }
+
+  @media (max-width: $tablet-width) {
+    font-size: 16px;
+  }
 }
 
 .header__mail {
@@ -89,6 +134,14 @@
 
   &:focus {
     color: $text-hover;
+  }
+
+  @media (max-width: $tablet-width) {
+    font-size: 15px;
+  }
+
+  @media (max-width: $mobile-width) {
+    display: none;
   }
 }
 
@@ -117,5 +170,39 @@
   &:focus {
     background-color: $white;
     color: $text-hover;
+  }
+
+  @media (max-width: $tablet-width) {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+}
+
+.header__menu-button {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background-color: $transparent;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+
+  @media (max-width: $mobile-width) {
+    display: block;
+    background-image: url("../img/menu-close.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+  }
+
+  &--closed {
+    background-image: url("../img/menu-open.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
   }
 }

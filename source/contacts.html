@@ -14,7 +14,7 @@
     <header class="header">
       <div class="container header--wrapper">
         <a class="logo" href="./index.html"><span class="logo__color">All</span>ppr</a>
-        <nav>
+        <nav class="header__nav">
           <ul class="header__list">
             <li class="header__item">
               <a class="header__link" href="./about.html">
@@ -42,7 +42,8 @@
           <a class="header__phone" href="tel:+79267234500">+7 (926) 723-45-00</a>
           <a class="header__mail" href="mailto:info@allppr.ru">info@allppr.ru</a>
         </div>
-        <a class="header__button">Заказать звонок</a>
+        <a class="header__button order" data-name="order">Заказать звонок</a>
+        <button class="header__menu-button header__menu-button--closed" type="button"><span class="visually-hidden">Open menu</span></button>
       </div>
     </header>
     <main class="main">
@@ -83,14 +84,14 @@
             <p class="contacts__text">9:00 – 18:00</p>
           </div>
           <div class="contacts__map">
-            <iframe class="contacts__map-frame" src="https://yandex.ru/map-widget/v1/-/CCUBZNCtDC" width="1240" height="500" style="position:relative;" frameborder="0"></iframe>
+            <iframe class="contacts__map-frame" src="https://yandex.ru/map-widget/v1/-/CCUFU6uYkA" width="1240" height="500" style="position:relative;" frameborder="0"></iframe>
           </div>
       </div>
     </main>
     <footer class="footer">
       <div class="container footer--wrapper">
         <a class="logo logo--footer" href="./index.html"><span class="logo__color">All</span>ppr</a>
-        <div>
+        <div class="footer__address">
           <h2 class="footer__title">Наш адрес</h2>
           <p>г. Москва, ул. 1-я Владимирская, д. 10А, оф. 11</p>
         </div>
@@ -105,27 +106,79 @@
         </div>
       </div>
     </footer>
-    <!-- <section class="modal">
+    <section class="modalFirst">
       <div class="modal__wrapper">
-        <form action="#" id="form" class="form__modal">
-          <h1 class="modal__title">Оставьте заявку и наш менеджер с Вами свяжется</h1>
-          <button type="button" class="modal__close" aria-label="Закрыть"><span class="visually-hidden">Закрыть</span></button>
-          <div class="modal__item">
-            <label for="name" class="modal__label">ФИО* :</label>
-            <input id="name" type="text" class="modal__input required" name="name" placeholder="Имя" aria-label="Ваше имя" value="">
+        <h2 class="modal__title">Связаться с нами</h2>
+        <button type="button" class="modal__close" aria-label="Закрыть"></button>
+        <p class="modal__text">Заполните форму и мы свяжемся с вами в ближайшее время</p>
+        <form class="modal__form" action="send.php" method="POST">
+          <div class="modal__item-container">
+            <label class="modal__label">
+              <input
+                type="text"
+                class="modal__input"
+                name="name"
+                placeholder="Как к Вам обращаться*"
+                aria-label="Имя"
+                required
+              >
+              </input>
+            </label>
           </div>
-          <div class="modal__item">
-            <label for="phone" class="modal__label">Телефон* :</label>
-            <input id="phone" type="tel" class="modal__input phone required" name="phone" placeholder="Телефон" aria-label="Номер телефона" value="">
+          <div class="modal__item-container">
+            <label class="modal__label">
+              <input
+                type="text"
+                pattern="([\+]*[7-8]{1}\s?[\(]*9[0-9]{2}[\)]*\s?\d{3}[-]*\d{2}[-]*\d{2})"
+                class="modal__input"
+                name="tel"
+                placeholder="Ваш телефон*"
+                aria-label="Телефон"
+                required
+              >
+              </input>
+            </label>
           </div>
-          <div class="modal__item">
-            <label for="company" class="modal__label">Фирма/организация:</label>
-            <input id="company" type="text" class="modal__input" name="company" placeholder="Название" aria-label="Название организации/компании" value="">
+          <div class="modal__item-container">
+            <label class="modal__label">
+              <input
+                type="text"
+                class="modal__input"
+                name="email"
+                placeholder="Ваш E-mail"
+                aria-label="email"
+              >
+              </input>
+            </label>
           </div>
-          <button type="submit" class="modal__button">Заказать звонок</button>
+          <label class="modal__label">Тема обращения
+            <textarea
+              class="modal__textarea"
+              name="comment"
+              aria-label="Оставить комментарий"
+              rows="4"
+            ></textarea>
+          </label>
+          <div class="captcha_wrapper">
+            <script src='https://www.google.com/recaptcha/api.js'></script>
+            <div class="g-recaptcha" data-sitekey="6LehJ4UfAAAAAFgbs-VeRwL4qp42W4qnoK4saA5D"></div>
+          </div>
+          <button
+            class="modal__button"
+            type="submit">
+            Заказать звонок
+          </button>
         </form>
       </div>
-    </section> -->
+    </section>
     <script src="js/script.min.js"></script>
+    <script>
+      document.querySelector('.modal__form').onsubmit = function () {
+          if (!grecaptcha.getResponse()) {
+               alert('Вы не заполнили поле Я не робот!');
+               return false;
+          }
+      }
+    </script>
   </body>
 </html>
